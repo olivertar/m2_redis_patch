@@ -7,9 +7,26 @@ Redis patch for session management optimization
 - php-redis-session-abstract 2.1.2
 
 ## Installation
+
+To apply it to your installation, add the patches to your composer.json
+
+    "extra": {
+        "magento-force": "override",
+        "patches": {
+            "magento/framework": {
+                "Serialize session": "https://raw.githubusercontent.com/olivertar/m2_redis_patch/refs/heads/main/patches/colinmollenhour/php-redis-session-abstract/2.1.2/set-php-serialize-handler.patch"
+            },
+            "colinmollenhour/php-redis-session-abstract": {
+                "Session lock write only": "https://raw.githubusercontent.com/olivertar/m2_redis_patch/refs/heads/main/patches/colinmollenhour/php-redis-session-abstract/2.1.2/implement-write-lock.patch"
+            }
+        }
+    }
+
+Then run the commands
+
 ```
-composer require orangecat/m2_redis_patch
-bin/magento setup:upgrade
+composer install
+bin/magento setup:upgrade --keep-generated
 ```
 
 ## What is this patch?
