@@ -8,7 +8,12 @@ Redis patch for session management optimization
 
 ## Installation
 
-To apply it to your installation, add the patches to your composer.json
+To install patches with composer you need to have "cweagans/composer-patches" installed first.
+If you don't have it installed you can do it with:
+```
+composer require cweagans/composer-patches
+```
+Then, add the patches to your composer.json
 
     "extra": {
         "magento-force": "override",
