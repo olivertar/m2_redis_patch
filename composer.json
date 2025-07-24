@@ -18,7 +18,7 @@
   "extra": {
     "patches": {
       "magento/framework": {
-        "Serialize session": "patches/colinmollenhour/php-redis-session-abstract/2.1.2/set-php-serialize-handler.patch",
+        "Serialize session": "patches/colinmollenhour/php-redis-session-abstract/2.1.2/set-php-serialize-handler.patch"
       },
       "colinmollenhour/php-redis-session-abstract": {
         "Session lock write only": "patches/colinmollenhour/php-redis-session-abstract/2.1.2/implement-write-lock.patch"
