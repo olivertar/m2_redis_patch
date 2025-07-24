@@ -1,0 +1,13 @@
+diff --git a/Session/Config.php b/Session/Config.php
+index 8ebed1d..d68b3b7 100644
+--- a/Session/Config.php
++++ b/Session/Config.php
+@@ -189,6 +189,8 @@ class Config implements ConfigInterface
+             $this->setOption('session.gc_maxlifetime', $gcMaxlifetime);
+         }
+ 
++        $this->setOption('session.serialize_handler', 'php_serialize');
++
+         /**
+          * Cookie settings: lifetime, path, domain, httpOnly. These govern settings for the session cookie.
+          */

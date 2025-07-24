@@ -1,0 +1,29 @@
+{
+  "name": "orangecat/m2_redis_patch",
+  "description": "Redis patch for session management optimization",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Oliverio Gombert",
+      "email": "ogombert@orangecat.es"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "cweagans/composer-patches": "^1.7",
+    "colinmollenhour/credis":"~1.17",
+    "colinmollenhour/php-redis-session-abstract": "^v2.1.2"
+  },
+  "extra": {
+    "patches": {
+      "magento/framework": {
+        "Serialize session": "patches/colinmollenhour/php-redis-session-abstract/2.1.2/set-php-serialize-handler.patch",
+      },
+      "colinmollenhour/php-redis-session-abstract": {
+        "Session lock write only": "patches/colinmollenhour/php-redis-session-abstract/2.1.2/implement-write-lock.patch"
+      }
+    }
+  }
+}
+
